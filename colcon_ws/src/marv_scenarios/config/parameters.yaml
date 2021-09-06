@@ -1,0 +1,147 @@
+scenario_test_constant_velocity_lqi:
+  ros__parameters:
+    throttle_aps:
+      Kp: 12.9449
+      Ki: -9.9425
+      
+scenario_test_constant_velocity:
+  ros__parameters:
+    throttle_aps:
+      Kp: 1.0
+      Ki: 0.01
+      Kd: 1.0
+
+scenario_waypoint_navigation:
+  ros__parameters:
+    # --Thrust, APS and surge constants--
+    # Gain for the thrust controller, integral, proportinal
+    #thrust_controller_gain: [10.9042, 39.2224]
+    thrust_controller_gain: [4.798, 16.726]
+
+    # Anti windup controller gain                      
+    thrust_anti_windup_gain: -3.0
+
+    # Limits the min aps throttle signal (%)
+    aps_signal_limit_min: 0.0 
+
+    # Limits the max aps throttle signal (%)           
+    aps_signal_limit_max: 50.0 
+
+    # Limits the change in velocity (m/s²)          
+    surge_rate_limit: 1.5
+    # ----------------------------------       
+
+    # --Heading and steering constants--
+    # Gain for the heading controller, integral, proportional, yaw
+    heading_controller_gain: [-1.1113, -1.3918, -0.8918]  
+
+    # Anti windup controller gain                    
+    heading_anti_windup_gain: 5.0
+
+    # Limits the steering angle (deg)     
+    steering_angle_limit: 23
+
+    # Limits the change in steering (deg/s)      
+    steering_angle_rate_limit: 20.0                          
+    # ----------------------------------
+
+    # --Other parameters----------------
+    # Minimum velocity (m/s)
+    u_min: 3.0 
+
+    # Time between reference signal and response (from sim) (s)                   
+    delta_t: 1.0 
+
+    # +/- angle in which the WR will keep the maximum velocity, outside it will be lowered (deg)                 
+    vel_diff_ang: 5.0  
+
+    # Reference position, latitude, longitude, attitude
+    ref_pos: [57.6667, 11.8333, 0.0]  
+
+    # Waypoint file name
+    wp_file_name: 'test_export.csv'
+
+    # Update frequency (Hz) (gain change also needed)
+    update_freq: 50.0
+
+    # Wating to start time
+    wait_time: 3.1
+
+    # Start sound time, default: 3.0, disable: 0.0
+    start_sound_time: 3.0
+    # ----------------------------------
+    
+scenario_thrust_controller_test:
+  ros__parameters:
+    # --Thrust, APS and surge constants--
+    # Gain for the thrust controller, integral, proportinal
+    # thrust_controller_gain: [10.9042, 39.2224]
+    thrust_controller_gain: [4.798, 16.726]
+
+    # Anti windup controller gain                      
+    thrust_anti_windup_gain: -3.0
+
+    # Limits the min aps throttle signal (%)
+    aps_signal_limit_min: 0.0 
+
+    # Limits the max aps throttle signal (%)           
+    aps_signal_limit_max: 50.0 
+
+    # Limits the change in velocity (m/s²)          
+    surge_rate_limit: 1.5                           
+    # ----------------------------------
+
+    # --Other parameters----------------
+
+    # Update frequency (Hz) (gain change also needed)
+    update_freq: 50.0
+
+    # Wating to start time
+    wait_time: 5.0
+
+    # Start sound time, default: 3.0, disable: 0.0
+    start_sound_time: 3.0
+
+    # Reference velocity
+    reference_velocity: 5.0
+
+    # Reference position, latitude, longitude, attitude
+    ref_pos: [57.6667, 11.8333, 0.0]  
+    # ----------------------------------
+
+scenario_heading_controller_test:
+  ros__parameters:      
+    # --Heading and steering constants--
+    # Gain for the heading controller, integral, proportional, yaw
+    heading_controller_gain: [-1.1113, -1.3918, -0.8918]  
+
+    # Anti windup controller gain                    
+    heading_anti_windup_gain: 5.0
+
+    # Limits the steering angle (deg)     
+    steering_angle_limit: 23
+
+    # Limits the change in steering (deg/s)      
+    steering_angle_rate_limit: 12.0                          
+    # ----------------------------------
+
+    # --Other parameters----------------
+    # Update frequency (Hz) (gain change also needed)
+    update_freq: 50.0
+
+    # Wating to start time
+    wait_time: 5.0
+
+    # Start sound time, default: 3.0, disable: 0.0
+    start_sound_time: 3.0
+
+    # Heading reference
+    heading_reference: -90.0 # West
+
+    # Aps value to use
+    aps_signal_ref: 30.0
+
+    # Reference position, latitude, longitude, attitude
+    ref_pos: [57.6667, 11.8333, 0.0]  
+    # ----------------------------------
+    

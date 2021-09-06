@@ -1,0 +1,284 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: RCU TCU ACU PDU NCU UCU OCU
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ NewSignal_0003 : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ NewSignal_0002 : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ NewSignal_0013 : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ NewSignal_0016 : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ angle : 7|16@0- (0.01,0) [0|0] "degrees" Vector__XXX
+ SG_ APS : 7|16@0+ (0.01,0) [0|100] "%" Vector__XXX
+ SG_ RPS : 23|16@0+ (0.01,0) [0|100] "%" Vector__XXX
+ SG_ menuConfig_HEADER_id : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_HEADER_char0 : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_HEADER_char1 : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_HEADER_char2 : 31|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_HEADER_char3 : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_HEADER_char4 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_HEADER_char5 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_HEADER_char6 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_HEADER_id : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_HEADER_char0 : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_HEADER_char1 : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_HEADER_char2 : 31|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_HEADER_char3 : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_HEADER_char4 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_HEADER_char5 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_HEADER_char6 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_id : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_char0 : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_char1 : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_char2 : 31|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_char3 : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_char4 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_char5 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ menuConfig_DATA_char6 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ heartbeatRCU_Error_code : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1284 heartbeatTCU: 3 TCU
+ SG_ heartbeatTCU_Status : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ heartbeatTCU_Error_code : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ heartbeatTCU_Source : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 641 configNCU: 5 ACU
+ SG_ configNUC_Type : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ configNCU_Value : 15|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 711 soundBuzzerOCU: 1 OCU
+ SG_ buzzerSignalOCU_Signal : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 705 soundBuzzerACU: 1 ACU
+ SG_ soundBuzzerACU_Signal : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1281 heartbeatACU: 2 ACU
+ SG_ heartbeatACU_Status : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ heartbeatACU_Error_code : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1282 heartbeatRCU: 1 RCU
+ SG_ heartbeatRCU_Status : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1283 heartbeatPDU: 3 PDU
+ SG_ heartbeatPDU_Status : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ heartbeatPDU_Error_code : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ heartbeatPDU_Source : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1285 heartbeatNCU: 3 NCU
+ SG_ heartbeatNCU_Status : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ heartbeatNCU_Error_code : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ heartbeatNCU_Source : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1286 heartbeatUCU: 2 UCU
+ SG_ heartbeatUCU_Status : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ heartbeatUCU_Error_code : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1287 heartbeatOCU: 2 OCU
+ SG_ heartbeatOCU_Status : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ heartbeatOCU_Error_code : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 647 startScenario: 1 OCU
+ SG_ startScenario_ID : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 673 stateScenario: 1 ACU
+ SG_ stateScenario_state : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 583 powerACU: 1 OCU
+ SG_ powerACU_option : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 615 powerPDU: 1 OCU
+ SG_ powerPDU : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 34 cmdSteeringRCU: 6 RCU
+ SG_ cmdSteeringRCU_APS : 7|16@0+ (0.01,0) [0|100] "%" Vector__XXX
+ SG_ cmdSteeringRCU_RPS : 23|16@0+ (0.01,0) [0|100] "%" Vector__XXX
+ SG_ cmdSteeringRCU_Angle : 39|16@0- (0.01,0) [0|0] "degrees" Vector__XXX
+
+BO_ 33 cmdSteeringACU: 6 ACU
+ SG_ cmdSteeringACU_APS : 7|16@0+ (0.01,0) [0|100] "%" Vector__XXX
+ SG_ cmdSteeringACU_RPS : 23|16@0+ (0.01,0) [0|100] "%" Vector__XXX
+ SG_ cmdSteeringACU_Angle : 39|16@0- (0.01,0) [0|0] "degrees" Vector__XXX
+
+BO_ 743 logData: 1 OCU
+ SG_ logData_option : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 801 loggingState: 1 ACU
+ SG_ loggingState_state : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 769 loggingMarker: 1 ACU
+ SG_ loggingMarker_value : 7|8@0- (1,0) [0|0] "" Vector__XXX
+
+BO_ 737 scenarioSystemTime: 4 ACU
+ SG_ scenarioSystemTime_value : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 929 scenarioConfig: 8 ACU
+ SG_ scenarioConfig_scenario_id : 3|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ scenarioConfig_location : 7|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ scenarioConfig_data_char0 : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ scenarioConfig_data_char1 : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ scenarioConfig_data_char2 : 31|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ scenarioConfig_data_char3 : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ scenarioConfig_data_char4 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ scenarioConfig_data_char5 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ scenarioConfig_data_char6 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 965 log1NCU: 8 NCU
+ SG_ log1NCU_Angle : 7|16@0- (0.01,0) [0|0] "degree" Vector__XXX
+ SG_ log1NCU_AngleRef : 23|16@0- (0.01,0) [0|0] "degree" Vector__XXX
+ SG_ log1NCU_FiltVel : 39|16@0- (1,0) [0|0] "" Vector__XXX
+ SG_ log1NCU_DrvVel : 55|16@0- (1,0) [0|0] "" Vector__XXX
+
+BO_ 35 status12V_Auto: 1 PDU
+ SG_ status12V_Auto_state : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 897 notificationMessage: 8 ACU
+ SG_ notificationMessage_location : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ notificationMessage_data_char0 : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ notificationMessage_data_char1 : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ notificationMessage_data_char2 : 31|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ notificationMessage_data_char3 : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ notificationMessage_data_char4 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ notificationMessage_data_char5 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ notificationMessage_data_char6 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 679 resetScenarioHandler: 1 OCU
+ SG_ resetScenarioHandler_command : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 963 log1PDU: 8 PDU
+ SG_ log1PDU_DbExtCurrent : 7|10@0+ (10,0) [0|0] "mA" Vector__XXX
+ SG_ log1PDU_DbIntCurrent : 13|10@0+ (10,0) [0|0] "mA" Vector__XXX
+ SG_ log1PDU_AcuCurrent : 19|10@0+ (10,0) [0|0] "mA" Vector__XXX
+ SG_ log1PDU_DbIntAutoCurrent : 25|10@0+ (10,0) [0|0] "mA" Vector__XXX
+ SG_ log1PDU_DbExtAutoCurrent : 47|10@0+ (10,0) [0|0] "mA" Vector__XXX
+ SG_ log1PDU_IntTemp : 63|8@0+ (2,0) [0|0] "degC" Vector__XXX
+
+BO_ 964 log1TCU: 8 TCU
+ SG_ log1TCU_ApsRawOut : 7|12@0+ (2,0) [0|0] "mV" Vector__XXX
+ SG_ log1TCU_RpsRawOut : 11|12@0+ (2,0) [0|0] "mV" Vector__XXX
+ SG_ log1TCU_FcRawOut : 31|12@0+ (2,0) [0|0] "mV" Vector__XXX
+ SG_ log1TCU_ApsOut : 35|12@0+ (0.025,0) [0|0] "%" Vector__XXX
+ SG_ log1TCU_RpsOut : 55|12@0+ (0.025,0) [0|0] "%" Vector__XXX
+ SG_ log1TCU_FcOut : 59|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ log1TCU_Status : 57|1@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 996 log2TCU: 8 TCU
+ SG_ log2TCU_ApsRawIn : 7|12@0+ (2,0) [0|0] "mV" Vector__XXX
+ SG_ log2TCU_RpsRawIn : 11|12@0+ (2,0) [0|0] "mV" Vector__XXX
+ SG_ log2TCU_FcRawIn : 31|12@0+ (2,0) [0|0] "mV" Vector__XXX
+ SG_ log2TCU_ApsIn : 35|12@0+ (0.025,0) [0|0] "%" Vector__XXX
+ SG_ log2TCU_RpsIn : 55|12@0+ (0.025,0) [0|0] "%" Vector__XXX
+ SG_ log2TCU_FcIn : 59|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ log2TCU_Status : 57|1@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 833 ekfStatus: 1 ACU
+ SG_ ekfStatus_Value : 7|8@0- (1,0) [0|0] "" Vector__XXX
+
+BO_ 995 log2PDU: 8 PDU
+
+BO_ 865 insStatus: 1 ACU
+ SG_ insStatus_Value : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 39 status12V_Auto_temp: 1 OCU
+ SG_ status12V_Auto_temp_state : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+
+
+CM_ BU_ RCU "Node nr 2";
+CM_ BU_ TCU "Node nr 4";
+CM_ BU_ ACU "Node nr 1";
+CM_ BU_ PDU "Node nr 3";
+CM_ BU_ NCU "Node nr 5";
+CM_ BU_ UCU "Node nr 7";
+CM_ BU_ OCU "Node nr 8";
+CM_ SG_ 3221225472 menuConfig_HEADER_id "Scenario ID";
+CM_ SG_ 3221225472 menuConfig_HEADER_char0 "Scenario HEADER char0";
+CM_ SG_ 3221225472 menuConfig_DATA_HEADER_id "Scenario ID";
+CM_ SG_ 3221225472 menuConfig_DATA_HEADER_char0 "Scenario DATA HEADER char";
+CM_ SG_ 3221225472 menuConfig_DATA_id "Scenario ID";
+CM_ SG_ 3221225472 menuConfig_DATA_char0 "Scenario DATA char";
+CM_ BO_ 1284 "";
+CM_ BO_ 641 "Not implemented on NCU";
+CM_ BO_ 711 "Send buzzer command to UCU";
+CM_ BO_ 705 "Send buzzer command to UCU";
+CM_ BO_ 1281 "Heartbeat status of unit";
+CM_ BO_ 647 "Scenario start request, different IDs depending on the scenario";
+CM_ BO_ 673 "Sets the scenario state of the ocu, used to confirm scenario start requests";
+CM_ BO_ 583 "Sends reboot or shutdown requests to ACU";
+CM_ BO_ 615 "Sends reboot or shutdown requests to PDU";
+CM_ BO_ 743 "Send a request to start logging data (sets a marker)";
+CM_ BO_ 801 "Sends the logging state";
+CM_ BO_ 769 "Sends the logging marker";
+CM_ BO_ 737 "Sends the system time";
+CM_ BO_ 965 "Log message 1 for NCU";
+CM_ SG_ 965 log1NCU_Angle "Current steering  angle";
+CM_ SG_ 965 log1NCU_AngleRef "Current steering angle commanded reference";
+CM_ SG_ 965 log1NCU_FiltVel "Velocity estimated from angle sensor - Scaling and unit TBD";
+CM_ SG_ 965 log1NCU_DrvVel "Velocity reported from motor driver - Scaling and unit TBD";
+CM_ BO_ 35 "Status for 12V Auto";
+CM_ BO_ 897 "Notification popup message from ACU to OCU";
+CM_ BO_ 679 "Any command sent on this ID resets the scenario handler";
+CM_ SG_ 963 log1PDU_IntTemp "Internal Temperature of PDU";
+CM_ BO_ 964 "APS & RPS written to WaveRunner system";
+CM_ SG_ 964 log1TCU_Status "Valid when 12V Auto is active";
+CM_ BO_ 996 "APS & RPS read from WaveRunner handles";
+CM_ SG_ 996 log2TCU_Status "Valid when 12V Auto is not activated";
+CM_ BO_ 833 "Sends EKF status";
+CM_ BO_ 865 "Heading, velocity and position status";
+VAL_ 1284 heartbeatTCU_Status 0 "er" 1 "ok" 2 "nc" ;
+VAL_ 1284 heartbeatTCU_Source 0 "none" 1 "rcu" 2 "acu" 3 "testing" ;
+VAL_ 641 configNUC_Type 0 "MAX_CURRENT" 1 "FULLSTEP_RESOLUTION" 2 "MAX_ACCELERATION" ;
+VAL_ 1281 heartbeatACU_Status 0 "er" 1 "ok" 2 "nc" ;
+VAL_ 1282 heartbeatRCU_Status 0 "er" 1 "ok" 2 "nc" ;
+VAL_ 1283 heartbeatPDU_Status 0 "er" 1 "ok" 2 "nc" ;
+VAL_ 1283 heartbeatPDU_Source 0 "none" 1 "rcu" 2 "acu" 3 "testing" ;
+VAL_ 1285 heartbeatNCU_Status 0 "er" 1 "ok" 2 "nc" ;
+VAL_ 1285 heartbeatNCU_Source 0 "none" 2 "acu" 1 "rcu" 3 "testing" ;
+VAL_ 1286 heartbeatUCU_Status 0 "er" 1 "ok" 2 "nc" ;
+VAL_ 1287 heartbeatOCU_Status 0 "er" 1 "ok" 2 "nc" ;
+VAL_ 673 stateScenario_state 0 "waiting" 1 "executing" 2 "fault" 3 "stopped" 4 "finished" 5 "req_sent" ;
+VAL_ 583 powerACU_option 1 "reboot" 2 "shutdown" ;
+VAL_ 615 powerPDU 1 "reboot" 2 "shutdown" 0 "dbw_reboot" ;
+VAL_ 743 logData_option 1 "true" 0 "false" ;
+VAL_ 801 loggingState_state 0 "false" 1 "true" ;
+VAL_ 35 status12V_Auto_state 0 "off" 1 "on" ;
+VAL_ 964 log1TCU_FcOut 0 "UNDEFINED" 1 "OPEN" 2 "CLOSED" ;
+VAL_ 964 log1TCU_Status 0 "NOT__VALID" 1 "VALID" ;
+VAL_ 996 log2TCU_FcIn 0 "UNDEFINED" 1 "OPEN" 2 "CLOSED" ;
+VAL_ 996 log2TCU_Status 0 "NOT_VALID" 1 "VALID" ;
+VAL_ 833 ekfStatus_Value -1 "not connected" 0 "uninitialized" 1 "vertical_gyro" 2 "ahrs" 3 "nav_velocity" 4 "nav_position" ;
+VAL_ 865 insStatus_Value 0 "all_false" 1 "position_true" 10 "velocity_true" 100 "heading_true" 11 "pos_vel_true" 101 "pos_head_true" 110 "vel_head_true" 111 "pos_vel_head_true" ;
+VAL_ 39 status12V_Auto_temp_state 0 "off" 1 "on" ;
+

@@ -1,0 +1,16 @@
+# VS code configuration (if needed force add instead)
+*.vscode
+
+# If ROS build are mistakenly done from wrong dir
+build/
+install/
+log/
+logs/
+logs_specific/
+
+# Any ZIP
+*.zip
+
+#pycharm
+*.idea
+�5@@XZ@8

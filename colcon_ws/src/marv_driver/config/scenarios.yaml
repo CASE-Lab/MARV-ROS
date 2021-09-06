@@ -1,0 +1,25 @@
+marv_scenario_handler:
+  ros__parameters:
+    scenario_0:
+      name: "EXAMPLE"
+    
+    scenario_1:
+      name: "TH_TEST"
+    
+    scenario_2:
+      name: "CST_VEL"
+    
+    scenario_3:
+      name: "REF_POS"
+    
+    scenario_4:
+      name: "TH_RAMP"
+    
+    scenario_5:
+      name: "HED_CTL"
+    
+    scenario_6:
+      name: "THR_CTL"
+    
+    scenario_7:
+      name: "WP_NAV"

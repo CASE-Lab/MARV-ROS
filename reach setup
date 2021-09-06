@@ -1,0 +1,20 @@
+flasha minneskort (Nvidia SDK Manager)
+formatera hårddisk
+
+Flytta till SSD Jetsonhacks (https://www.jetsonhacks.com/2020/05/29/jetson-xavier-nx-run-from-ssd/)
+Stäng av ssh över telemetri Jetsonhacks (https://www.jetsonhacks.com/2019/10/10/jetson-nano-uart/)
+ros2 (och pip, argcomplete) (https://docs.ros.org/en/eloquent/Installation/Linux-Install-Debians.html)
+pyserial (pip3 install pyserial)
+colcon (https://colcon.readthedocs.io/en/released/user/installation.html)
+ros2 bag (https://docs.ros.org/en/eloquent/Tutorials/Ros2bag/Recording-And-Playing-Back-Data.html)
+python-can (pip3 install python-can)
+cantools (pip3 install cantools)
+screen terminal (sudo apt install screen)
+
+clona wr controller 
+sudo visudo för rättigheter, reach-001 ALL=(ALL) NOPASSWD:ALL
+dialout usb (sudo usermod -a -G dialout $USER)
+autostart script (crontab -e, lägg in rad med @reboot /home/reach-001/Documents/WaveRunner-Controller/waverunner_start.sh)
+bygg wr controller (colcon build --symlink-install)
+enable ssh
+
