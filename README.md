@@ -6,7 +6,7 @@ ROS software for the MARV system. Provides basic functions. Inside colcon_ws the
 - sbg_ros2: The SBG INS driver
 
 # Requires
-Install everything mentioned in "reach setup"
+Install everything mentioned in "reach setup" on the REACH unit.
 
 # Build
 Inside colcon_ws folder
