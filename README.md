@@ -24,3 +24,6 @@ Then simply execute the script to start a screen teminal session.
 Link to guide: https://linuxize.com/post/how-to-use-linux-screen/
 Reattach: If a session is ongoing it is possible to reattach by executing "screen -r"
 Kill all sessions: If multiple sessions are running or there is a need to shut down everything, then execute "killall screen"
+
+## Extra ROS node
+The "scenario_starter" ROS node is supposed to simulate the rest of the MARV system's behaviour. It simulates the 12V Auto state and OCU commands start scenario commands. This node can be used for trying out scenarios "on land" before a real test drive. It does however not simulate any sensor data but it will give an indication if the Python script starts up correctly.
