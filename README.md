@@ -5,7 +5,7 @@ ROS software for the MARV system. Provides basic functions. Inside colcon_ws the
 - marv_scenarios: Contains all the user implemented scenarios, such as waypoint_navigation.
 - sbg_ros2: The SBG INS driver
 
-## Requires
+## Dependencies
 Install everything mentioned in "reach setup" on the REACH unit.
 
 ## Build
@@ -23,4 +23,4 @@ Then simply execute the script to start a screen teminal session.
 ## Screen Terminal
 Link to guide: https://linuxize.com/post/how-to-use-linux-screen/
 Reattach: If a session is ongoing it is possible to reattach by executing "screen -r"
-Kill all sessions: If multiple sessions are running or there is a need to shut down everything, then execure "killall screen"
+Kill all sessions: If multiple sessions are running or there is a need to shut down everything, then execute "killall screen"
