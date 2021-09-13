@@ -3,8 +3,8 @@
 # "sudo systemctl disable nvgetty.service" + reboot is needed in order to access /dev/ttyTHS0
 
 # Change this to the marv repo folder location
-#path="/home/reach-002/Documents"
-path="/home/viktor/Documents"
+path="/home/reach-002/Documents"
+#path="/home/viktor/Documents"
 
 echo "MARV System Initializing..."
 

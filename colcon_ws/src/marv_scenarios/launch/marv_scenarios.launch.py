@@ -14,7 +14,7 @@ import launch_ros.actions
 
 def generate_launch_description():
     config_params = os.path.join(
-        get_package_share_directory('waverunner_scenarios'),
+        get_package_share_directory('marv_scenarios'),
         'config',
         'parameters.yaml'
         )
@@ -28,7 +28,7 @@ def generate_launch_description():
             description="Logging level",
         ),
         launch_ros.actions.Node(
-            package='waverunner_scenarios',
+            package='marv_scenarios',
             #namespace='',
             node_executable='example_scenario',
             name='example_scenario',
@@ -37,7 +37,7 @@ def generate_launch_description():
             arguments=['--ros-args', '--log-level', logger]
         ),
 	    launch_ros.actions.Node(
-            package='waverunner_scenarios',
+            package='marv_scenarios',
             #namespace='',
             node_executable='test_throttle',
             name='test_throttle',
@@ -46,7 +46,7 @@ def generate_launch_description():
             arguments=['--ros-args', '--log-level', logger]
         ),	
         launch_ros.actions.Node(
-            package='waverunner_scenarios',
+            package='marv_scenarios',
             #namespace='',
             node_executable='test_constant_velocity',
             name='test_constant_velocity',
@@ -56,7 +56,7 @@ def generate_launch_description():
             arguments=['--ros-args', '--log-level', logger]
         ),
         launch_ros.actions.Node(
-            package='waverunner_scenarios',
+            package='marv_scenarios',
             #namespace='',
             node_executable='set_reference_position',
             name='set_reference_position',
@@ -66,7 +66,7 @@ def generate_launch_description():
             arguments=['--ros-args', '--log-level', logger]
         ),
 	    launch_ros.actions.Node(
-            package='waverunner_scenarios',
+            package='marv_scenarios',
             #namespace='',
             node_executable='test_throttle_ramp',
             name='test_throttle_ramp',
@@ -75,7 +75,7 @@ def generate_launch_description():
             arguments=['--ros-args', '--log-level', logger]
         ),	
         launch_ros.actions.Node(
-            package='waverunner_scenarios',
+            package='marv_scenarios',
             #namespace='',
             node_executable='waypoint_navigation',
             name='waypoint_navigation',
@@ -85,7 +85,7 @@ def generate_launch_description():
             arguments=['--ros-args', '--log-level', logger]
         ),
         launch_ros.actions.Node(
-            package='waverunner_scenarios',
+            package='marv_scenarios',
             #namespace='',
             node_executable='thrust_controller_test',
             name='thrust_controller_test',
@@ -95,7 +95,7 @@ def generate_launch_description():
             arguments=['--ros-args', '--log-level', logger]
         ),
         launch_ros.actions.Node(
-            package='waverunner_scenarios',
+            package='marv_scenarios',
             #namespace='',
             node_executable='heading_controller_test',
             name='heading_controller_test',

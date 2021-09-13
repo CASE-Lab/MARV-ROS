@@ -7,7 +7,7 @@
 # ------------------------------------- #
 # The Scenario node handles the logic for starting and stopping scenarios.
 # Should be inherited by the "user scenario" to provide the nessecaery
-# methods for controlling the waverunner. Only the Set, Get and Update functions
+# methods for controlling the marv. Only the Set, Get and Update functions
 # should be used! Do not directly modify any variables.
 '''
 
@@ -23,8 +23,8 @@ from rclpy.executors import MultiThreadedExecutor
 from std_msgs.msg import Bool
 from std_msgs.msg import Int8
 from std_msgs.msg import String
-from waverunner_msgs.msg import CmdSteering
-from waverunner_msgs.msg import DataVarHeader
+from marv_msgs.msg import CmdSteering
+from marv_msgs.msg import DataVarHeader
 from geometry_msgs.msg import PoseWithCovariance
 class Scenario(Node):
 
@@ -70,7 +70,7 @@ class Scenario(Node):
         # Node state
         self.__node_state = self.__state["STOPPED"]
 
-        # Waverunner system mode
+        # marv system mode
         self.__mode = self.__mode_state["MAN"]
 
         # Steering command variables
@@ -83,13 +83,13 @@ class Scenario(Node):
 
         ######### SUBSCRIPTIONS #########
         # Create node start request subscriber
-        node_start_stop_request_TOPIC = "/waverunner/node/" + self.__scenario_name + "/start_scenario"
+        node_start_stop_request_TOPIC = "/marv/node/" + self.__scenario_name + "/start_scenario"
         self.subscription = self.create_subscription(Bool, node_start_stop_request_TOPIC, self.__node_start_stop_request_callback, 10)
         self.subscription
 
         ######### PUBLISHES #############
         # Create data val header publisher
-        self.__data_var_header_publisher_ = self.create_publisher(DataVarHeader, "/waverunner/node/data_var_header", 10)      
+        self.__data_var_header_publisher_ = self.create_publisher(DataVarHeader, "/marv/node/data_var_header", 10)      
 
         # Allow time for subscriptions and publishes to be set up
         time.sleep(0.5)
@@ -120,31 +120,31 @@ class Scenario(Node):
     def __setup(self):
 
         ######### SUBSCRIPTIONS #########
-        # Subscribe to the waverunner system mode
-        self.mode_subscription = self.create_subscription(Bool, '/waverunner/sys/status/state_12V_auto', self.__mode_callback, 10)
+        # Subscribe to the marv system mode
+        self.mode_subscription = self.create_subscription(Bool, '/marv/sys/status/state_12V_auto', self.__mode_callback, 10)
         self.mode_subscription
 
         ######### PUBLISHES #############
         # Create node state publisher
-        node_state_TOPIC = "/waverunner/node/" + self.__scenario_name + "/state"
+        node_state_TOPIC = "/marv/node/" + self.__scenario_name + "/state"
         self.__node_state_publisher_ = self.create_publisher(Int8, node_state_TOPIC, 10)
         # Create node cmdSteering publisher
-        node_cmdSteering_TOPIC = "/waverunner/node/" + self.__scenario_name + "/cmdSteering"
+        node_cmdSteering_TOPIC = "/marv/node/" + self.__scenario_name + "/cmdSteering"
         self.__node_cmdSteering_publisher_ = self.create_publisher(CmdSteering, node_cmdSteering_TOPIC, 10)
         # Create scenario progress publisher
-        node_progress_update_TOPIC = "/waverunner/node/" + self.__scenario_name + "/progress_update"
+        node_progress_update_TOPIC = "/marv/node/" + self.__scenario_name + "/progress_update"
         self.__node_progress_update_publisher_ = self.create_publisher(String, node_progress_update_TOPIC, 10)
         # Create scenario data var 1 publisher
-        node_data_1_update_TOPIC = "/waverunner/node/" + self.__scenario_name + "/data_var_1_update"
+        node_data_1_update_TOPIC = "/marv/node/" + self.__scenario_name + "/data_var_1_update"
         self.__node_data_var_1_update_publisher_ = self.create_publisher(String, node_data_1_update_TOPIC, 10)
         # Create scenario data var 1 publisher
-        node_data_2_update_TOPIC = "/waverunner/node/" +self.__scenario_name + "/data_var_2_update"
+        node_data_2_update_TOPIC = "/marv/node/" +self.__scenario_name + "/data_var_2_update"
         self.__node_data_var_2_update_publisher_ = self.create_publisher(String, node_data_2_update_TOPIC, 10)
         # Create notification publisher
-        node_send_notification_TOPIC = "/waverunner/node/" + self.__scenario_name + "/send_notification"
+        node_send_notification_TOPIC = "/marv/node/" + self.__scenario_name + "/send_notification"
         self.__node_send_notification_publisher_ = self.create_publisher(String, node_send_notification_TOPIC, 10)
         # Create buzzer signal publisher
-        node_send_buzzer_signal_TOPIC = "/waverunner/node/" + self.__scenario_name + "/send_buzzer_signal"
+        node_send_buzzer_signal_TOPIC = "/marv/node/" + self.__scenario_name + "/send_buzzer_signal"
         self.__node_send_buzzer_signal_publisher_ = self.create_publisher(Int8, node_send_buzzer_signal_TOPIC, 10)
 
         # Allow time for subscriptions and publishes to be set up
