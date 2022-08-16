@@ -10,7 +10,7 @@ Install everything mentioned in "reach setup" on the REACH unit.
 
 ## Build
 Inside colcon_ws folder
-- source ROS2 eloquent
+- source ROS2 galactic
 - build with "colcon build --symlink-install"
 
 ## Logging
