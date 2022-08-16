@@ -1,4 +1,4 @@
-marv_scenario_handler:
+scenario_handler:
   ros__parameters:
     scenario_0:
       name: "EXAMPLE"

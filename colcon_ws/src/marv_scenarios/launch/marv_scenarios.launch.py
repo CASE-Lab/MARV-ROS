@@ -30,7 +30,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_scenarios',
             #namespace='',
-            node_executable='example_scenario',
+            executable='example_scenario',
             name='example_scenario',
             output='screen', 
             emulate_tty=True,
@@ -39,7 +39,7 @@ def generate_launch_description():
 	    launch_ros.actions.Node(
             package='marv_scenarios',
             #namespace='',
-            node_executable='test_throttle',
+            executable='test_throttle',
             name='test_throttle',
             output='screen', 
             emulate_tty=True,
@@ -48,7 +48,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_scenarios',
             #namespace='',
-            node_executable='test_constant_velocity',
+            executable='test_constant_velocity',
             name='test_constant_velocity',
             parameters = [config_params],
             output='screen', 
@@ -58,7 +58,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_scenarios',
             #namespace='',
-            node_executable='set_reference_position',
+            executable='set_reference_position',
             name='set_reference_position',
             parameters = [config_params],
             output='screen', 
@@ -68,7 +68,7 @@ def generate_launch_description():
 	    launch_ros.actions.Node(
             package='marv_scenarios',
             #namespace='',
-            node_executable='test_throttle_ramp',
+            executable='test_throttle_ramp',
             name='test_throttle_ramp',
             output='screen', 
             emulate_tty=True,
@@ -77,7 +77,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_scenarios',
             #namespace='',
-            node_executable='waypoint_navigation',
+            executable='waypoint_navigation',
             name='waypoint_navigation',
             parameters = [config_params],
             output='screen', 
@@ -87,7 +87,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_scenarios',
             #namespace='',
-            node_executable='thrust_controller_test',
+            executable='thrust_controller_test',
             name='thrust_controller_test',
             parameters = [config_params],
             output='screen', 
@@ -97,7 +97,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_scenarios',
             #namespace='',
-            node_executable='heading_controller_test',
+            executable='heading_controller_test',
             name='heading_controller_test',
             parameters = [config_params],
             output='screen', 

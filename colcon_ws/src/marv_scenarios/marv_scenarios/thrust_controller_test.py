@@ -55,16 +55,16 @@ class Thrust_Controller_Test(Scenario):
         self.declare_parameters(
             namespace='',
             parameters=[
-                ('thrust_controller_gain', None),
-                ('thrust_anti_windup_gain', None),
-                ('aps_signal_limit_min', None),
-                ('aps_signal_limit_max', None),
-                ('surge_rate_limit', None),
-                ('update_freq', None),
-                ('wait_time', None),
-                ('start_sound_time', None),
-                ('reference_velocity', None),
-                ('ref_pos', None),
+                ('thrust_controller_gain', [0.0, 0.0]),
+                ('thrust_anti_windup_gain', 0.0),
+                ('aps_signal_limit_min', 0.0),
+                ('aps_signal_limit_max', 0.0),
+                ('surge_rate_limit', 0.0),
+                ('update_freq', 0.0),
+                ('wait_time', 0.0),
+                ('start_sound_time', 0.0),
+                ('reference_velocity', 0.0),
+                ('ref_pos', [0.0, 0.0, 0.0]),
             ])
 
         # ------- Global variables -------

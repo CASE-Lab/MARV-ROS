@@ -52,9 +52,9 @@ class Test_Constant_Velocity(Scenario):
         self.declare_parameters(
             namespace='',
             parameters=[
-                ('throttle_aps.Kp', None),
-                ('throttle_aps.Ki', None),
-                ('throttle_aps.Kd', None),
+                ('throttle_aps.Kp', 0.0),
+                ('throttle_aps.Ki', 0.0),
+                ('throttle_aps.Kd', 0.0),
             ])
 
         # ------- Global variables -------

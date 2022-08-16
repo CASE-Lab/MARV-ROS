@@ -56,16 +56,16 @@ class Heading_Controller_Test(Scenario):
         self.declare_parameters(
             namespace='',
             parameters=[
-                ('heading_controller_gain', None),
-                ('heading_anti_windup_gain', None),
-                ('steering_angle_limit', None),
-                ('steering_angle_rate_limit', None),
-                ('update_freq', None),
-                ('wait_time', None),
-                ('start_sound_time', None),
-                ('heading_reference', None),
-                ('ref_pos', None),
-                ('aps_signal_ref', None),
+                ('heading_controller_gain', [0.0, 0.0, 0.0]),
+                ('heading_anti_windup_gain', 0.0),
+                ('steering_angle_limit', 0),
+                ('steering_angle_rate_limit', 0.0),
+                ('update_freq', 0.0),
+                ('wait_time', 0.0),
+                ('start_sound_time', 0.0),
+                ('heading_reference', 0.0),
+                ('aps_signal_ref', 0.0),
+                ('ref_pos', [0.0, 0.0, 0.0]),
             ])
 
         # ------- Global variables -------

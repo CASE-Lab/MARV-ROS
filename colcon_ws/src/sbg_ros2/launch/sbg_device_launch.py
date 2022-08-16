@@ -14,7 +14,7 @@ def generate_launch_description():
 		Node(
 			package='sbg_driver',
 		#	name='sbg_device_1',
-			node_executable = 'sbg_device',
+			executable = 'sbg_device',
 			output = 'screen',
 			emulate_tty=True,
 			parameters = [config]

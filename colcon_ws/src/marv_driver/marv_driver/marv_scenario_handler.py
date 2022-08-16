@@ -57,12 +57,15 @@ class MARV_Scenario_Handler(Node):
         self.scenario_data_header_2 = [""] * self.nbr_of_scenarios
 
         for index in range(0,self.nbr_of_scenarios):
-            self.declare_parameters(
+            '''self.declare_parameters(
                 namespace='',
                 parameters=[
-                    ('scenario_' + str(index) + '.name', None),
-                ])
+                    ('scenario_' + str(index) + '.name', "NOT_INITIALIZED"),
+                ])'''
+            self.declare_parameter('scenario_' + str(index) + '.name', "NOT_INITIALIZED")
             self.scenario_header[index] = self.get_parameter('scenario_' + str(index) + '.name').value
+
+        self.get_logger().info("Configured scenario list: " + str(self.scenario_header))
 
         # Configuration parameters 
         self.scenario_config_message_period = 5.0 # seconds update time for publishing scenario configuration

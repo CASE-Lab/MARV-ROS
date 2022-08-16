@@ -30,7 +30,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_driver',
             #namespace='',
-            executable='power_management',
+            node_executable='power_management',
             name='power_management',
             output='screen', 
             emulate_tty=True,
@@ -39,7 +39,7 @@ def generate_launch_description():
 	    launch_ros.actions.Node(
             package='marv_driver',
             #namespace='',
-            executable='can_bridge',
+            node_executable='can_bridge',
             name='can_bridge',
             output='screen', 
             emulate_tty=True,
@@ -48,7 +48,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_driver',
             #namespace='',
-            executable='scenario_handler',
+            node_executable='scenario_handler',
             name='scenario_handler',
             parameters = [config],
             output='screen', 
@@ -58,7 +58,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_driver',
             #namespace='',
-            executable='logger',
+            node_executable='logger',
             name='logger',
             parameters = [config],
             output='screen', 
@@ -68,7 +68,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_driver',
             #namespace='',
-            executable='heartbeat_acu',
+            node_executable='heartbeat_acu',
             name='heartbeat_acu',
             parameters = [config],
             output='screen', 
@@ -78,7 +78,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_driver',
             #namespace='',
-            executable='status_sender',
+            node_executable='status_sender',
             name='status_sender',
             parameters = [config],
             output='screen', 
@@ -88,7 +88,7 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='marv_driver',
             #namespace='',
-            executable='sbg_interface',
+            node_executable='sbg_interface',
             name='sbg_interface',
             parameters = [config],
             output='screen', 

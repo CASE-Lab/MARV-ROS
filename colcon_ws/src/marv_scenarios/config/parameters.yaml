@@ -1,17 +1,17 @@
-scenario_test_constant_velocity_lqi:
+test_constant_velocity_lqi:
   ros__parameters:
     throttle_aps:
       Kp: 12.9449
       Ki: -9.9425
       
-scenario_test_constant_velocity:
+test_constant_velocity:
   ros__parameters:
     throttle_aps:
       Kp: 1.0
       Ki: 0.01
       Kd: 1.0
 
-scenario_waypoint_navigation:
+waypoint_navigation:
   ros__parameters:
     # --Thrust, APS and surge constants--
     # Gain for the thrust controller, integral, proportinal
@@ -71,7 +71,7 @@ scenario_waypoint_navigation:
     start_sound_time: 3.0
     # ----------------------------------
     
-scenario_thrust_controller_test:
+thrust_controller_test:
   ros__parameters:
     # --Thrust, APS and surge constants--
     # Gain for the thrust controller, integral, proportinal
@@ -109,7 +109,7 @@ scenario_thrust_controller_test:
     ref_pos: [57.6667, 11.8333, 0.0]  
     # ----------------------------------
 
-scenario_heading_controller_test:
+heading_controller_test:
   ros__parameters:      
     # --Heading and steering constants--
     # Gain for the heading controller, integral, proportional, yaw
