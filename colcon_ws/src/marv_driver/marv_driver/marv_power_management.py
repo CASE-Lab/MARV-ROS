@@ -72,7 +72,7 @@ class MARV_Power_Management(Node):
 
             # Wait 5 sec for rosbag to exit then execute reboot command
             time.sleep(5.0)
-            os.system("sudo reboot")
+            os.system("sudo shutdown -r now")
 
         else:
             msg = "ROS: Invalid command: " + str(data.data)

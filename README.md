@@ -11,14 +11,21 @@ Install everything mentioned in "reach setup" on the REACH unit.
 ## Build
 Inside colcon_ws folder
 - source ROS2 galactic
-- build with "colcon build --symlink-install"
+- build with "colcon build --symlink-install" inside the colcon_ws folder
 
 ## Logging
-There are two ROS bags for logging data. The first one tries to log everything, which does not always work. The second "specific ros bag" only logs the specified topics. These should be entered inside the "start_specific_ros_bah.sh" script.
+There are two ROS bags for logging data. The first "ros bag" logs every topic, while the second "specific ros bag" only logs the specified topics, such as navigation data. These specific topics can be changed inside the "start_specific_ros_bah.sh" script.
 
-## Run
-Before running change the "path" variable inside "marv_start.sh" to the location of the repository.
-Then simply execute the script to start a screen teminal session.
+## Running
+- Testing purposes: The marv package can be executed using "./marv_start.sh" command, this will start a screen terminal session.
+- Normal usage: Make sure that the service has been set up in the "reach setup" document. Then the package should start automatically during boot. If any manual restart is needed then attach to the screen session with "screen -r", shut down all terminals using ctrl + C, ctrl + D until screen has been shut down. Stop the service and then start it again, see commands below.
+
+## The MARV package service commands
+- Enable service with "sudo systemctl enable marv_package", used once to enable the service every during boot.
+- Disable service with "sudo systemctl enable marv_package", used once to disable the service every time during boot.
+- Manually start service with "sudo systemctl start marv_package".
+- Manually stop service with "sudo systemctl stop marv_package".
+- Check status of service with "systemctl status marv_package".
 
 ## Screen Terminal
 Link to guide: https://linuxize.com/post/how-to-use-linux-screen/

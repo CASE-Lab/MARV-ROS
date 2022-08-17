@@ -1,0 +1,12 @@
+[Unit]
+Description=marv package
+
+[Service]
+Type=simple
+User=reach-001
+WorkingDirectory=/home/reach-001/Documents/MARV-ROS
+ExecStart=/home/reach-001/Documents/MARV-ROS/marv_start.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
