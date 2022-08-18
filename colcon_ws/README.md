@@ -1,4 +1,4 @@
-# Colcon Workspace for Autonomous WaveRunner Project
+# Colcon Workspace for MARV Project
 
 ## VS Code setup
 
