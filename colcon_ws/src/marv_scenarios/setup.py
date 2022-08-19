@@ -34,7 +34,7 @@ setup(
             'test_throttle = marv_scenarios.test_throttle:main',
             'test_constant_velocity = marv_scenarios.test_constant_velocity:main',
             'set_reference_position = marv_scenarios.set_reference_position:main',
-            'test_throttle_ramp = marv_scenarios.test_throttle_ramp:main',
+            'remote_network_steering = marv_scenarios.remote_network_steering:main',
             'waypoint_navigation = marv_scenarios.waypoint_navigation:main',
             'thrust_controller_test = marv_scenarios.thrust_controller_test:main',
             'heading_controller_test = marv_scenarios.heading_controller_test:main',

@@ -68,8 +68,9 @@ def generate_launch_description():
 	    launch_ros.actions.Node(
             package='marv_scenarios',
             #namespace='',
-            executable='test_throttle_ramp',
-            name='test_throttle_ramp',
+            executable='remote_network_steering',
+            name='remote_network_steering',
+            parameters = [config_params],
             output='screen', 
             emulate_tty=True,
             arguments=['--ros-args', '--log-level', logger]

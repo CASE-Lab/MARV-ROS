@@ -1,0 +1,55 @@
+<!--
+  MARV Web Operator, operator site
+
+  by Linus Johansson and Joakim Osterman, Spring 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Operator : MARV Web Operator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="parent">
+      <div class="div1">
+        <div id="video-box">
+          <video playsinline autoplay muted></video>
+        </div>
+      </div>
+      <div class="div2">
+        <button id="enable-gamepad">Enable Gamepad</button>
+        <button id="enable-audio">Enable audio</button>
+      </div>
+      <div class="div3">
+        <h1>APS</h1>
+        <canvas id="aps"></canvas>
+        <h2 id="aps-value"></h2>
+
+        <h1>RPS</h1>
+        <canvas id="rps"></canvas>
+        <h2 id="rps-value"></h2>
+
+        <h1>Angle</h1>
+        <canvas id="angle"></canvas>
+        <h2 id="angle-value"></h2>
+      </div>
+    </div>
+    
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="watch.js"></script>
+
+    <script src="gamepad.js"></script>
+    
+    <script src="https://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
+    <script src="speedometer.js"></script>
+
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  </body>
+</html>

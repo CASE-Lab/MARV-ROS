@@ -5,7 +5,7 @@ Description=marv package
 Type=simple
 User=reach-001
 WorkingDirectory=/home/reach-001/Documents/MARV-ROS
-ExecStart=/home/reach-001/Documents/MARV-ROS/marv_start.sh
+ExecStart=/home/reach-001/Documents/MARV-ROS/start_scripts/marv_start.sh
 RemainAfterExit=yes
 
 [Install]

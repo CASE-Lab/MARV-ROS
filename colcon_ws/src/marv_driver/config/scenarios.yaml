@@ -13,7 +13,7 @@ scenario_handler:
       name: "REF_POS"
     
     scenario_4:
-      name: "TH_RAMP"
+      name: "RNS"
     
     scenario_5:
       name: "HED_CTL"
