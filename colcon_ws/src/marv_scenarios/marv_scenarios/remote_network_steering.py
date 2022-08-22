@@ -286,7 +286,7 @@ class Remote_Network_Steering(Scenario):
        
                     
                 ### Ramp down when kill switch released, make non-blocking
-                if not self.killswitch:
+                if not self.killswitch or self.reset_killswitch:
                     if (self.aps_signal != 0.00 or self.rps_signal != 0.00):
                         if self.aps_signal > 0.00:
                             self.aps_signal -= 0.01

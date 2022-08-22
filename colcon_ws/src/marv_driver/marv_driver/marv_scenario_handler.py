@@ -72,7 +72,7 @@ class MARV_Scenario_Handler(Node):
         self.scenario_system_time_message_period = 0.2 # seconds update time for publishing the scenario system time
         self.scenario_state_update_message_period = 0.1 # seconds update time for state transitions and messages
         self.notification_message_length = 70 # max length of notification message in characters, needs to be in fractions of 7 (also needs to be set in OCU code)
-        self.node_state_timer_Timeout = 0.1 # seconds before counting a node as not connected, if not state updates are recived 
+        self.node_state_timer_Timeout = 0.2 # seconds before counting a node as not connected, if not state updates are recived 
         self.scenario_node_state_timeout_update_period = 0.1 # seconds update time to check is scenario node has timed out it's state update
         self.scenario_start_request_handle_waiting_period = 3.0 # seconds non blocking period, allows the scenario node to start up and respond
         self.scenario_handler_fault_finished_state_timeout_period = 0.02 # seconds between cmdSteering commands when in fault or finished state

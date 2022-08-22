@@ -45,13 +45,14 @@ The operator controls the MARV using an XBOX controller and a web interface serv
 ## Dependencies
 Before you can run the server you need to install Node.js, preferrably version 16 since the server was only developed and tested with this version. Node version manager (NVM) works well for installing a specific Node version on the REACH computer.
 Then you need to install all npm dependencies for the server. This can be done by sourcing ROS2 ("source /opt/ros/galactic/setup.bash") and running "npm install" inside the "WEB-UI" folder. If this does not work, try "npm i rclnodejs" and then "npm install".
+An Xbox controller driver also needs to be installed with "sudo apt-get install xboxdrv".
 
 ## Running RNS
 ### MARV ROS package
 Start the MARV ROS package as described above in "Running".
 
 ### Web server and ROS node (in one package)
-Launch the server by,
+Launch the server by the start script "rns_start.py", or manually by,
 - Source ROS2 Galactic ("source /opt/ros/galactic/setup.bash")
 - Locate the server folder ("cd Documents/MARV-ROS-WITH-RNS/WEB-UI/dist")
 - Start the server using "node server.js". The ROS node is baked into the server.js script and will start simultaneously with the server. Might want to do this differently in the future, for example with the PM2 daemon.
@@ -62,6 +63,11 @@ On host computer (REACH) - for video stream:
 On client computer:
 - Open a web browser (preferrably Chrome based) and go to the IP address of the REACH computer (192.168.1.91 in the CASE lab) and add port 1337 to the end, like this "192.168.1.91:1337"
 - Press "Enable Gamepad" and you are ready to steer the MARV
+- Tested on Microsoft Edge web browser (Might not work on Chrome)
 
 ## Gamepad controls
-- Throttle ...
+- Deativate Killswitch: hold x button, press y. When the killswitch is deativated steering commands can be executed.
+- Activate Killswitch: release x button. When the killswitch is activated no steering commands can be executed.
+- Throttle APS: press and hold the right trigger to increase aps throttle.
+- Throttle RPS: press and hold the left trigger to increase rps throttle.
+- Steering angle: steer with the left joystick.
