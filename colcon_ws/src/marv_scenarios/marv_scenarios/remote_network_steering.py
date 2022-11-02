@@ -213,6 +213,9 @@ class Remote_Network_Steering(Scenario):
         self.destroy_subscription(self.gamepad_input)
         self.destroy_publisher(self.feedback_publisher)
 
+        self.set_cmd_steering_aps(0.0)
+        self.set_cmd_steering_angle(0.0)
+
         self.main_loop_timer.cancel()
         #self.get_new_params_timer.cancel()
 
@@ -286,7 +289,7 @@ class Remote_Network_Steering(Scenario):
        
                     
                 ### Ramp down when kill switch released, make non-blocking
-                if not self.killswitch or self.reset_killswitch:
+                if not self.killswitch:
                     if (self.aps_signal != 0.00 or self.rps_signal != 0.00):
                         if self.aps_signal > 0.00:
                             self.aps_signal -= 0.01

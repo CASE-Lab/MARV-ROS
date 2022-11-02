@@ -62,7 +62,8 @@ class MARV_SBG_Interface(Node):
         self.user_output = False # If true, then user information will be shown in cmd monitor
 
         # Global variables
-        self.ref_pos_set = False # Keeps track if reference position is set
+        #self.ref_pos_set = False # Keeps track if reference position is set
+        self.ref_pos_set = True # Keeps track if reference position is set
         self.time_synced = False # Keeps track if time is correctly synced
         self.efk_status = -1 # -1 = not set from sbg_driver, 0 = UNINITIALIZED, 1 = VERTICAL_GYRO, 2 = AHRS, 3 = NAV_VELOCITY, 4 = NAV_POSITION
         self.gps_pos_reliable = False # If GPS data is reliable < 10m error
@@ -72,7 +73,8 @@ class MARV_SBG_Interface(Node):
         self.accelerometer_reading = np.array(((0.0),(0.0),(0.0))) # Acceleration from IMU, X, Y, Z axis m/s2 
         self.gyroscope_reading = np.array(((0.0),(0.0),(0.0))) # Angular velocity from IMU, X, Y, Z axis rad/s 
 
-        self.reference_position_geo = np.array(((0.0),(0.0),(0.0))) # Reference position for converting geodetic coordinates (lat,long,alt) to navigation coordinates (x,y,z), z not used
+        #self.reference_position_geo = np.array(((0.0),(0.0),(0.0))) # Reference position for converting geodetic coordinates (lat,long,alt) to navigation coordinates (x,y,z), z not used
+        self.reference_position_geo = np.array(((57.725028),(11.649762),(0.0)))
         self.current_pos_nav = np.array(((0.0),(0.0),(0.0))) # Current position in navigation coordinates, NED
         self.current_pos_geo = np.array(((0.0),(0.0),(0.0))) # Current position in geodetic coordinates, WGS84
         self.current_pos_geo_accuracy = np.array(((0.0),(0.0),(0.0))) # Current position in geodetic coordinates accuracy for lat,long,alt (m) (1 sigma)

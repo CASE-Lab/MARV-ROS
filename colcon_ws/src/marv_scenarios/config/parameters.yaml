@@ -56,10 +56,10 @@ waypoint_navigation:
     vel_diff_ang: 5.0  
 
     # Reference position, latitude, longitude, attitude
-    ref_pos: [57.6667, 11.8333, 0.0]  
+    ref_pos: [57.725315, 11.650315, 0.0]  
 
     # Waypoint file name
-    wp_file_name: 'test_export.csv'
+    wp_file_name: 'test_ockero_export.csv'
 
     # Update frequency (Hz) (gain change also needed)
     update_freq: 50.0
