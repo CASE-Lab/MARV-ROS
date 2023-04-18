@@ -55,7 +55,6 @@ class MARV_SBG_Interface(Node):
 
         # Configuration parameters
         self.state_message_period = 1.0 # seconds update time for publishing "marv_sbg_ref_pos_state", "marv_sbg_time_synced_state" and "marv_sbg_gps_pos_reliable_state"
-        self.pos_message_period = 0.2 # seconds update time for publishing "marv_sbg_current_pos"
         self.user_message_period = 0.1 # seconds update time for showing user info in cmd window
         self.sys_time_message_period = 0.2 # seconds update time for publishing the marv system time
         self.UTC_time_zone = 2 # Time zoned used
@@ -78,7 +77,6 @@ class MARV_SBG_Interface(Node):
         self.current_pos_nav = np.array(((0.0),(0.0),(0.0))) # Current position in navigation coordinates, NED
         self.current_pos_geo = np.array(((0.0),(0.0),(0.0))) # Current position in geodetic coordinates, WGS84
         self.current_pos_geo_accuracy = np.array(((0.0),(0.0),(0.0))) # Current position in geodetic coordinates accuracy for lat,long,alt (m) (1 sigma)
-        self.publish_geodetic_coordinates_directly = True # If true, then the geodetic coordinates will be published directly when recieved from sbg_driver
         self.position_updated = False # Is set to true when updated data is recieved from sbg unit
         self.current_velocity_magnitude = 0 # Current velocity magnitude, using the velocity along x,y axis (BODY)
         self.current_velocity_nav = np.array(((0.0),(0.0),(0.0))) # Current velocity along x,y,x (NED)
@@ -134,7 +132,6 @@ class MARV_SBG_Interface(Node):
 
         # Setup timers for periodic callbacks
         self.state_message_timer = self.create_timer(self.state_message_period, self.MARV_sbg_state_publisher_callback)
-        self.pos_message_timer = self.create_timer(self.pos_message_period, self.MARV_sbg_current_pos_publisher_callback)
         self.user_info_timer = self.create_timer(self.user_message_period, self.user_message_callback)
         self.sys_time_message_timer = self.create_timer(self.sys_time_message_period, self.sys_time_message_callback)
 
@@ -296,16 +293,6 @@ class MARV_SBG_Interface(Node):
         self.marv_sbg_ref_pos_state_publisher_.publish(state_ref_pos_set_message)
         self.marv_sbg_time_synced_state_publisher_.publish(state_time_synced_message)
         self.marv_sbg_gps_pos_reliable_state_publisher_.publish(state_gps_pos_reliable_message)
-
-    # Publishes raw geodetic position in lat,long,alt
-    def MARV_sbg_current_pos_publisher_callback(self):
-        if self.time_synced and not self.publish_geodetic_coordinates_directly: # If time is synced we should have aquired GPS lock, thus the pos should be correct
-            # Message for keeping the latitude, longitude and altitude message in Vector3()
-            current_pos_message = Vector3()
-            current_pos_message.x = self.current_pos_geo[0]
-            current_pos_message.y = self.current_pos_geo[1]
-            current_pos_message.z = self.current_pos_geo[2]
-            self.marv_sbg_current_pos_publisher_.publish(current_pos_message)
         
     # Publishes the system time
     def sys_time_message_callback(self):
@@ -406,13 +393,12 @@ class MARV_SBG_Interface(Node):
             current_velocity_message.z = 0.0
             self.marv_sbg_velocity_publisher_.publish(current_velocity_message)
 
-            # Publish raw geodetic position in lat,long,alt if enabled
-            if self.publish_geodetic_coordinates_directly:
-                current_pos_message = Vector3() # Message for keeping the latitude, longitude and altitude message in Vector3()
-                current_pos_message.x = self.current_pos_geo[0]
-                current_pos_message.y = self.current_pos_geo[1]
-                current_pos_message.z = self.current_pos_geo[2]
-                self.marv_sbg_current_pos_publisher_.publish(current_pos_message)
+            # Publish raw geodetic position in lat,long,alt
+            current_pos_message = Vector3() # Message for keeping the latitude, longitude and altitude message in Vector3()
+            current_pos_message.x = self.current_pos_geo[0]
+            current_pos_message.y = self.current_pos_geo[1]
+            current_pos_message.z = self.current_pos_geo[2]
+            self.marv_sbg_current_pos_publisher_.publish(current_pos_message)
 
     # Transforms geodetic coordinates in the WGS84 (World Geodetic System 1984) coordinate frame 
     # to local navigation coordinates in the ENU (East North Up) cordinate frame
