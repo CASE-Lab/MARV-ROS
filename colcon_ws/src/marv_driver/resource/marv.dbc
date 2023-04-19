@@ -69,6 +69,7 @@ BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ menuConfig_DATA_char5 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ menuConfig_DATA_char6 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ heartbeatRCU_Error_code : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ NewSignal_0005 : 7|8@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1284 heartbeatTCU: 3 TCU
  SG_ heartbeatTCU_Status : 7|8@0+ (1,0) [0|0] "" Vector__XXX
@@ -214,6 +215,12 @@ BO_ 865 insStatus: 1 ACU
 BO_ 39 status12V_Auto_temp: 1 OCU
  SG_ status12V_Auto_temp_state : 7|8@0+ (1,0) [0|0] "" Vector__XXX
 
+BO_ 961 radarState: 1 ACU
+ SG_ radarState_state : 7|8@0- (1,0) [0|0] "" Vector__XXX
+
+BO_ 775 radarControl: 1 OCU
+ SG_ radarControl_state : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
 
 
 CM_ BU_ RCU "Node nr 2";
@@ -257,6 +264,8 @@ CM_ BO_ 996 "APS & RPS read from WaveRunner handles";
 CM_ SG_ 996 log2TCU_Status "Valid when 12V Auto is not activated";
 CM_ BO_ 833 "Sends EKF status";
 CM_ BO_ 865 "Heading, velocity and position status";
+CM_ BO_ 961 "Sends the radar state";
+CM_ BO_ 775 "Sends radar on/off state commands";
 VAL_ 1284 heartbeatTCU_Status 0 "er" 1 "ok" 2 "nc" ;
 VAL_ 1284 heartbeatTCU_Source 0 "none" 1 "rcu" 2 "acu" 3 "testing" ;
 VAL_ 641 configNUC_Type 0 "MAX_CURRENT" 1 "FULLSTEP_RESOLUTION" 2 "MAX_ACCELERATION" ;
@@ -281,4 +290,6 @@ VAL_ 996 log2TCU_Status 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 833 ekfStatus_Value -1 "not connected" 0 "uninitialized" 1 "vertical_gyro" 2 "ahrs" 3 "nav_velocity" 4 "nav_position" ;
 VAL_ 865 insStatus_Value 0 "all_false" 1 "position_true" 10 "velocity_true" 100 "heading_true" 11 "pos_vel_true" 101 "pos_head_true" 110 "vel_head_true" 111 "pos_vel_head_true" ;
 VAL_ 39 status12V_Auto_temp_state 0 "off" 1 "on" ;
+VAL_ 961 radarState_state 0 "off" 1 "standby" 2 "spinning_up" 3 "transmitting" -1 "error" ;
+VAL_ 775 radarControl_state 0 "off" 1 "on" ;
 

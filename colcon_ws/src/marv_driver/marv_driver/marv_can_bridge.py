@@ -70,6 +70,7 @@ class MARV_CAN_Bridge(Node):
         self.subscription = self.create_subscription(Status, '/marv/sys/status/heartbeat_acu', self.heartbeatACU_callback, 10)
         self.subscription = self.create_subscription(Int8, '/marv/nav/sbg_ekf_status', self.sbg_ekf_status_callback ,10)
         self.subscription = self.create_subscription(Int8, '/marv/nav/sbg_ins_status', self.sbg_ins_status_callabck ,10)
+        self.subscription = self.create_subscription(Int8, '/marv/sys/status/radar_state', self.radarState_callback ,10)
         self.subscription
         
         # Publishes the power management topic
@@ -104,6 +105,8 @@ class MARV_CAN_Bridge(Node):
         self.marv_sys_log_1TCU_publisher_ = self.create_publisher(Log1TCU, '/marv/sys/log/log1_tcu', 10)
         # Log2TCU
         self.marv_sys_log_2TCU_publisher_ = self.create_publisher(Log2TCU, '/marv/sys/log/log2_tcu', 10)
+        # Publishes the radar control start or stop command
+        self.marv_sys_radar_control_publisher_ = self.create_publisher(Bool, '/marv/sys/ctrl/radar_control', 10)
 
         # Allow time for subscriptions and publishes to be set up
         time.sleep(1.0)
@@ -305,6 +308,13 @@ class MARV_CAN_Bridge(Node):
                 ros_msg.status = bool(decoded_message['log2TCU_Status'])
                 self.marv_sys_log_2TCU_publisher_.publish(ros_msg)
 
+            # Publishes the radar control start or stop command
+            elif message.arbitration_id == self.db.get_message_by_name("radarControl").frame_id:
+                decoded_message = self.db.decode_message(message.arbitration_id, message.data, decode_choices=False)
+                ros_msg = Bool()
+                ros_msg.data = bool(decoded_message['radarControl_state'])
+                self.marv_sys_radar_control_publisher_.publish(ros_msg)
+
             '''
             # Scenario Config State
             elif message.arbitration_id == self.db.get_message_by_name("scenarioConfigState").frame_id:
@@ -380,6 +390,11 @@ class MARV_CAN_Bridge(Node):
     def sbg_ins_status_callabck(self,ros_message):
         can_message = self.db.get_message_by_name('insStatus')
         encoded_message = can_message.encode({'insStatus_Value': ros_message.data})
+        self.bus.send(can.Message(arbitration_id=can_message.frame_id, data=encoded_message, is_extended_id=False))
+
+    def radarState_callback(self,ros_message):
+        can_message = self.db.get_message_by_name('radarState')
+        encoded_message = can_message.encode({'radarState_state': ros_message.data})
         self.bus.send(can.Message(arbitration_id=can_message.frame_id, data=encoded_message, is_extended_id=False))
 
     ########################################################################################################
