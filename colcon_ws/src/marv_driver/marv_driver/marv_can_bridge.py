@@ -105,8 +105,8 @@ class MARV_CAN_Bridge(Node):
         self.marv_sys_log_1TCU_publisher_ = self.create_publisher(Log1TCU, '/marv/sys/log/log1_tcu', 10)
         # Log2TCU
         self.marv_sys_log_2TCU_publisher_ = self.create_publisher(Log2TCU, '/marv/sys/log/log2_tcu', 10)
-        # Publishes the radar control start or stop command
-        self.marv_sys_radar_control_publisher_ = self.create_publisher(Bool, '/marv/sys/ctrl/radar_control', 10)
+        # Publishes the radar enable/disable command
+        self.marv_sys_radar_enable_publisher_ = self.create_publisher(Bool, '/marv/sys/ctrl/radar_enable', 10)
 
         # Allow time for subscriptions and publishes to be set up
         time.sleep(1.0)
@@ -308,12 +308,12 @@ class MARV_CAN_Bridge(Node):
                 ros_msg.status = bool(decoded_message['log2TCU_Status'])
                 self.marv_sys_log_2TCU_publisher_.publish(ros_msg)
 
-            # Publishes the radar control start or stop command
+            # Publishes the radar enable/disable command
             elif message.arbitration_id == self.db.get_message_by_name("radarControl").frame_id:
                 decoded_message = self.db.decode_message(message.arbitration_id, message.data, decode_choices=False)
                 ros_msg = Bool()
                 ros_msg.data = bool(decoded_message['radarControl_state'])
-                self.marv_sys_radar_control_publisher_.publish(ros_msg)
+                self.marv_sys_radar_enable_publisher_.publish(ros_msg)
 
             '''
             # Scenario Config State
